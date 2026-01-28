@@ -1,7 +1,7 @@
 import re
 
 test_data = ""
-with open(r'D:\Projects\MTG-Deck-Engine\backend\test_data\test_deck.txt', 'r') as file:
+with open(r'D:\Projects\MTG-Deck-Engine\backend\src\test_data\test_deck.txt', 'r') as file:
         test_data = file.read().splitlines()
 
 LINE_PATTERN = re.compile(
@@ -10,7 +10,7 @@ LINE_PATTERN = re.compile(
 
 def format_decklist():
     formatted_deck_list = []
-    
+
     for line in test_data:
          match = LINE_PATTERN.match(line)
          if match:

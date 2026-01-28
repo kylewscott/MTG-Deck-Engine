@@ -1,5 +1,7 @@
 import requests
 from src.parsers.input_parser import format_decklist
+from src.models.card import Card
+from src.models.deck import Deck
 
 SCRYFALL_URL = "https://api.scryfall.com"
 
@@ -11,17 +13,25 @@ def get_card_by_name(name: str):
 
 
 def main(): 
-    deck_price = 0.0
     deck_list = format_decklist()
-    
-    for card in deck_list:
-        card_data = get_card_by_name(card["name"])
-        if(card_data["prices"]["usd"] != None):
-            deck_price += float(card_data["prices"]["usd"])
-        else:
-            print(card_data["name"] + ": no price found :(")
+    deck_data = []
 
-    print(f"${round(deck_price, 2)}")
+    for card in deck_list:
+        card_bulk_data = get_card_by_name(card["name"])
+        card_data = Card.from_scryfall(card_bulk_data, card["quantity"])
+        deck_data.append(card_data)
+
+    deck = Deck(commander=deck_data[0], cards=deck_data)
+    errors = deck.validate_deck()
+    if(errors):
+        print(errors)
+    else:
+        print('valid')
+
+    print(f"\n\n\n\n")
+    print(deck)
+
+    return deck_data
 
 if __name__ == "__main__":
     main()

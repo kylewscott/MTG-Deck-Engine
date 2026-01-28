@@ -4,7 +4,7 @@ __pycache__/
 *$py.class
 
 # Virtual Env files
-venv/
+.venv/
 .env/
 
 # IDE / Editor files
