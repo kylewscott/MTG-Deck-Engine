@@ -31,11 +31,8 @@ The next items we to work on
 6. Layout framework for UI and start sending in real input to help with #5
 7. Look into libraries that could help with this possibly
 8. Need to heavily think about the design/layout of the UI
-<br>
-<br>
-<br>
 # Developing
-Will each have our own branch
-When you have work to add push it up to your branch and create a PR so we can see what each other adding or add feadback
-Not super serious but will keep changes organized and prevent stepping on each others toes.
-Follow file strucutre and naming conventions to keep things consistent and clean
+Will each have our own branch<br>
+When you have work to add push it up to your branch and create a PR so we can see what each other adding or add feadback<br>
+Not super serious but will keep changes organized and prevent stepping on each others toes.<br>
+Follow file strucutre and naming conventions to keep things consistent and clean<br>
