@@ -1,5 +1,4 @@
 from src.models.deck import Deck
-from src.models.card import Card
 
 MAX_CARDS = 99
 MIN_CARDS = 99 
