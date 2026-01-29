@@ -1,5 +1,4 @@
-1 Accursed Marauder (MH3) 80
-1 Arcane Signet (BLC) 127
+2 Rat Colony (MH3) 80
 1 Archghoul of Thraben (VOW) 93
 1 Army of the Damned (MIC) 106
 1 Bladestitched Skaab (MID) 212

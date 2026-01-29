@@ -1,4 +1,4 @@
-from backend.src.parsers.decklist_parser import format_decklist
+from src.parsers.decklist_parser import format_decklist
 from src.services.scryfall_service import get_card_by_name
 from src.services.card_factory import create_card
 from src.validations.commander_rules import validate_deck
