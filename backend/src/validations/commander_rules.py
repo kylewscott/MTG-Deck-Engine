@@ -5,6 +5,16 @@ MAX_CARDS = 99
 MIN_CARDS = 99 
 lands = ["island", "swamp", "plains", "forest", "mountain"]
 
+def allow_any_number(text) -> bool:
+        multiple_allowed_text = "a deck can have any number of cards named"
+
+        if not text:
+            return False
+        
+        normalized_text = text.lower().replace("\n", " ")
+        return multiple_allowed_text in normalized_text
+
+#TODO better validations, extract logic to helper functions
 def validate_deck(deck: Deck):
     errors = []
 
@@ -21,7 +31,7 @@ def validate_deck(deck: Deck):
     found_names = set()
     for card in deck.cards:
         if(card.name in found_names or card.quantity > 1):
-            if((card.text and not card.allow_any_number()) and card.name.lower() not in lands):
+            if(not allow_any_number(card.text) and card.name.lower() not in lands):
                 errors.append(f"Multiple copies of the same card found: {card.name}\n")
         else:
             found_names.add(card.name)

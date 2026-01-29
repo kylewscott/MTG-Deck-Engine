@@ -4,6 +4,7 @@ LINE_PATTERN = re.compile(
     r"^\s*(\d+)\s+([A-Za-z ',\-]+)"
 )
 
+#TODO Make the input more flexible with this parser
 def format_decklist(decklist: list[str]):
     formatted_deck_list = []
 

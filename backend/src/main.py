@@ -8,9 +8,9 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
 TEST_DECK_PATH = BASE_DIR / "test_data" / "test_deck.txt"
-# TEST_DECK_PATH = r"D:\Projects\MTG-Deck-Engine\backend\src\test_data\test_deck.txt"
 
 def run():
+    #TODO Take real input
     with open(TEST_DECK_PATH, 'r') as file:
          raw_decklist = file.read().splitlines()
 
